@@ -1,0 +1,14 @@
+<div>
+    <img [src]="imageSrc" [alt]="name" />
+
+<p>Hello {{name}} !</p>
+  <button (click)="masquerAge()">Afficher l'age</button>
+<q>{{quote}}</q>
+
+<input type="text" placeholder="Changez la citation" type="text" [(ngModel)]="quote">
+
+  <p [hidden]="!showMessage">
+    {{age}}
+  </p>
+</div>
+

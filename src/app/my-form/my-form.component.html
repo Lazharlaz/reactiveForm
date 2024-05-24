@@ -1,0 +1,35 @@
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+    <fieldset>
+      <label for="firstName">Prenom</label>
+      <input id="first-name" name="firstName" type="text" required minlength="3" maxlength="15" [(ngModel)]="newUser.firstname" #firstName="ngModel">
+    </fieldset>
+    <div *ngIf="firstName.errors">
+        <span *ngIf="firstName.errors?.['required']">Le champ prenom est requis</span>
+        <span *ngIf="firstName.errors?.['minlength']">La longueur minimale doit être supérieure à 5</span>
+        <span *ngIf="firstName.errors?.['maxlength']">La longueur maximale doit être inférieure à 30</span>
+      </div>
+
+    <fieldset>
+        <label for="lastName">Nom</label>
+        <input id="last-name" name="lastName" type="text" required minlength="3" maxlength="15" [(ngModel)]="newUser.lastname" #lastName="ngModel">
+      </fieldset>
+      <div *ngIf="lastName.errors">
+        <span *ngIf="lastName.errors?.['required']">Le champ nom est requis</span>
+        <span *ngIf="lastName.errors?.['minlength']">La longueur minimale doit être supérieure à 5</span>
+        <span *ngIf="lastName.errors?.['maxlength']">La longueur maximale doit être inférieure à 30</span>
+      </div>
+
+      <fieldset>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" [(ngModel)]="newUser.email" minlength="3" maxlength="15" required email [(ngModel)]="newUser.email" #email="ngModel">
+      </fieldset>
+      <div *ngIf="email.errors">
+        <span *ngIf="email.errors?.['required']">L'Email est invalide</span>
+        <span *ngIf="email.errors?.['minlength']">La longueur minimale doit être supérieure à 5</span>
+      
+      </div>
+
+
+    <button type="reset">Restaurer</button>
+    <button type="submit">Sauvegarder</button>
+</form>

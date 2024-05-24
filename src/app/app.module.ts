@@ -8,6 +8,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { SignupComponent } from './signup/signup.component';
+import { MyFormComponent } from './my-form/my-form.component';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { SignupComponent } from './signup/signup.component';
     UserProfileComponent,
     MenuComponent,
     SignupComponent,
+    MyFormComponent,
   ],
   imports: [
     BrowserModule,

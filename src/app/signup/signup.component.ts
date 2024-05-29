@@ -7,14 +7,5 @@ import { User } from '../model/user.model';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent {
-  onSubmit(): void {
-    // form submitted
-    console.log('Formulaire envoyé !');
-  }
-  newUser: User = {
-    email: "",
-    firstname: "",
-    lastname: "",
-
-  };
+ 
 }

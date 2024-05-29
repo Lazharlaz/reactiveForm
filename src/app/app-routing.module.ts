@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 const routes: Routes = [
   { 
@@ -15,6 +16,10 @@ const routes: Routes = [
   { 
     path: 'user', 
     component: UserProfileComponent
+  },
+  { 
+    path: 'movie', 
+    component: SearchMovieComponent
   },
  
 ];

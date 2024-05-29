@@ -1,0 +1,56 @@
+
+
+  <form (ngSubmit)="onSubmit()"   [formGroup]="signInForm" #myForm="ngForm">
+
+
+    <div formGroupName="idTitre">
+
+
+    <label for="identifiant">Identifiant</label>
+      <input name="identifiant" formControlName="identifiant" >
+
+
+      <label for="titre">Titre</label>
+      <input name="titre" formControlName="titre">
+
+
+      <div *ngIf="signInForm.controls.idTitre.invalid && myForm.submitted">
+        
+        
+        <span *ngIf="signInForm.controls.idTitre.errors">L'un des deux champs 'Identifiant' ou 'Titre' doit être renseigné</span>
+      
+      </div>
+
+  
+    </div>
+
+<label for="releaseYear">Année de sortie </label>
+      <input name="releaseYear" type="number" formControlName="releaseYear">
+
+
+      <div *ngIf="signInForm.controls.releaseYear.invalid && myForm.submitted">
+        
+        <span *ngIf="signInForm.controls.releaseYear.errors">L'année doit etre comprise entre {{ signInForm.controls.releaseYear.errors?.['min'].minimal }} et {{ signInForm.controls.releaseYear.errors?.['min'].maximal }} </span>
+        
+      
+      </div>
+
+      <label for="type">Type</label>
+      <select id="type" formControlName="type">
+        <option *ngFor="let type of typeOptions" [value]="type">{{ type }}</option>
+      </select>
+
+      <div *ngIf="signInForm.controls.idTitre.controls.identifiant.value!='' ">
+        
+   
+         <label for="fiche">Fiche</label>
+      <select id="fiche" formControlName="fiche">
+        <option *ngFor="let fiche of ficheOptions" [value]="fiche">{{ fiche }}</option>
+      </select>
+      </div>
+
+   
+
+    <button type="reset">Restaurer</button>
+    <button type="submit">Sauvegarder</button>
+  </form>
